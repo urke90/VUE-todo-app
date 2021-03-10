@@ -1,14 +1,17 @@
 <template>
     <the-header title="VUE ToDo"></the-header>
+    <the-todos></the-todos>
 </template>
 
 <script>
 import TheHeader from './components/header/TheHeader.vue';
+import TheTodos from './components/todo/TheTodos.vue';
 
 export default {
     name: 'App',
     components: {
-        TheHeader
+        TheHeader,
+        TheTodos
     }
 };
 </script>
@@ -17,10 +20,9 @@ export default {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+body {
+    background-color: #264653;
 }
 </style>
