@@ -1,0 +1,74 @@
+<template>
+    <div>
+        <i class="fas fa-bars nav__menu" @click="toggleNavHandler"></i>
+        <ul class="nav__list nav__list--mobile" :class="toggledNav">
+            <li class="nav__item">
+                <base-button className="nav__link">
+                    Add Todo
+                </base-button>
+            </li>
+            <li class="nav__item">
+                <base-button className="nav__link">
+                    Todos List
+                </base-button>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            isOpened: false
+        };
+    },
+    methods: {
+        toggleNavHandler() {
+            this.isOpened = !this.isOpened;
+        }
+    },
+    computed: {
+        toggledNav() {
+            return { opened: this.isOpened };
+        }
+    }
+};
+</script>
+
+<style scoped>
+.nav__menu {
+    font-size: 30px;
+    color: #264653;
+}
+
+.nav__list--mobile {
+    width: 100%;
+    height: 0;
+    display: none;
+    background-color: #2a9d8f;
+    position: absolute;
+    text-align: center;
+    top: 60px;
+    left: 0;
+}
+
+.nav__list--mobile.opened {
+    display: block;
+    height: auto;
+    transition: all 2s ease-in;
+}
+
+@media screen and (min-width: 420px) {
+    .nav__menu {
+        display: none;
+    }
+    .nav__list--desktop {
+        display: flex;
+        align-items: center;
+    }
+    .nav__list--mobile.opened {
+        display: none;
+    }
+}
+</style>
