@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 h2 {
-    background-color: #f59c2f;
+    background-color: #e76f51;
     text-align: center;
     padding: 20px;
 }
