@@ -25,4 +25,7 @@ export default {
 body {
     background-color: #264653;
 }
+ul {
+    list-style-type: none;
+}
 </style>

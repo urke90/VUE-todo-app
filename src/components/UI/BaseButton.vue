@@ -38,7 +38,7 @@ export default {
     color: #e76f51;
     border: 1px solid #264653;
 }
-button.nav__link {
+.nav__link {
     width: 100%;
     padding: 10px;
     background-color: transparent;
@@ -48,7 +48,7 @@ button.nav__link {
     color: #264653;
     font-weight: 600;
 }
-button.nav__link:hover {
+.nav__link:hover {
     border: 3px solid #e76f51;
     background-color: #e76f51;
 }

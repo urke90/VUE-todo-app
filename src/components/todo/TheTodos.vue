@@ -1,5 +1,5 @@
 <template>
-    <div class="todos__wrapper">
+    <div class="todos">
         <todos-nav></todos-nav>
         <main>
             <h2>CONTENT</h2>
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-.todos__wrapper {
+.todos {
     max-width: 700px;
     margin: 50px auto;
     padding: 0 15px;
