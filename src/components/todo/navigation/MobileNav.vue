@@ -2,13 +2,19 @@
     <div>
         <i class="fas fa-bars nav__menu" @click="toggleNavHandler"></i>
         <ul class="nav__list nav__list--mobile" :class="toggledNav">
-            <li class="nav__item">
-                <base-button className="nav__link">
+            <li>
+                <base-button
+                    @click="switchTab('add-todo')"
+                    className="nav__link"
+                >
                     Add Todo
                 </base-button>
             </li>
-            <li class="nav__item">
-                <base-button className="nav__link">
+            <li>
+                <base-button
+                    @click="switchTab('stored-todos')"
+                    className="nav__link"
+                >
                     Todos List
                 </base-button>
             </li>
@@ -32,7 +38,8 @@ export default {
         toggledNav() {
             return { opened: this.isOpened };
         }
-    }
+    },
+    inject: ['switchTab']
 };
 </script>
 
