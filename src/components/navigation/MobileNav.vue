@@ -4,18 +4,18 @@
         <ul class="nav__list nav__list--mobile" :class="toggledNav">
             <li>
                 <base-button
-                    @click="switchTab('add-todo')"
-                    className="nav__link"
-                >
-                    Add Todo
-                </base-button>
-            </li>
-            <li>
-                <base-button
                     @click="switchTab('stored-todos')"
                     className="nav__link"
                 >
                     Todos List
+                </base-button>
+            </li>
+            <li>
+                <base-button
+                    @click="switchTab('add-todo')"
+                    className="nav__link"
+                >
+                    Add Todo
                 </base-button>
             </li>
         </ul>
