@@ -28,4 +28,13 @@ body {
 ul {
     list-style-type: none;
 }
+
+/*
+colors: 
+1. datk blue #264653
+2. light blue #2a9d8f
+3. light yellow #e9c46a 
+4. light oragne #f4a261
+5. dark orange #e76f51
+*/
 </style>

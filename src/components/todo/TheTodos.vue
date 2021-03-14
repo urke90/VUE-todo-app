@@ -6,9 +6,11 @@
 </template>
 
 <script>
-import TodosNav from './navigation/TodosNav';
+import TodosNav from '../navigation/TodosNav';
 import StoredTodos from './StoredTodos.vue';
 import AddTodo from './AddTodo.vue';
+
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
     components: {
@@ -18,18 +20,32 @@ export default {
     },
     data() {
         return {
-            selectedTab: 'stored-todos'
+            selectedTab: 'stored-todos',
+            storedTodos: [
+                {
+                    id: uuidv4(),
+                    title: 'Dog',
+                    description: 'walk the dog',
+                    completed: false
+                },
+                {
+                    id: uuidv4(),
+                    title: 'School',
+                    description: 'go to school',
+                    completed: false
+                }
+            ]
         };
     },
     methods: {
         switchTabHandler(tab) {
-            console.log('tab', tab);
             this.selectedTab = tab;
         }
     },
     provide() {
         return {
-            switchTab: this.switchTabHandler
+            switchTab: this.switchTabHandler,
+            storedTodos: this.storedTodos
         };
     }
 };
