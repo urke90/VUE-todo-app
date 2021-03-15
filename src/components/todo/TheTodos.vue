@@ -20,6 +20,7 @@ export default {
         return {
             selectedTab: 'stored-todos',
             storedTodos: []
+
         };
     },
     methods: {
@@ -29,6 +30,13 @@ export default {
         addTodo(todo) {
             this.storedTodos.unshift(todo);
             this.selectedTab = 'stored-todos';
+
+        removeTodo(id) {
+            const todoIndex = this.storedTodos.findIndex(
+                todo => todo.id === id
+            );
+            this.storedTodos.splice(todoIndex, 1);
+
         }
     },
     provide() {
@@ -36,6 +44,7 @@ export default {
             switchTab: this.switchTabHandler,
             storedTodos: this.storedTodos,
             addTodo: this.addTodo
+            removeTodo: this.removeTodo
         };
     }
 };

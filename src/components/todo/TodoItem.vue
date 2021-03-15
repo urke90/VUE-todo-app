@@ -1,16 +1,24 @@
 <template>
     <li class="todo__item">
         <h3 class="todo__title">{{ title }}</h3>
-        <p class="todo__description">
+        <p class="todo__description" :class="completedTodoMode">
             {{ description }}
         </p>
         <br />
         <div class="todo__actions">
             <label for="todo__completed">
                 Completed
-                <input type="checkbox" name="completed" class="todo__input" />
+                <input
+                    type="checkbox"
+                    name="completed"
+                    class="todo__input"
+                    v-model="isCompleted"
+                />
             </label>
-            <base-button className="btn btn--secondary">Remove</base-button>
+
+            <base-button @click="removeTodo(id)" className="btn btn--secondary">
+                Remove
+            </base-button>
         </div>
     </li>
 </template>
@@ -30,7 +38,19 @@ export default {
             type: String,
             required: true
         }
-    }
+
+    },
+    data() {
+        return {
+            isCompleted: false
+        };
+    },
+    computed: {
+        completedTodoMode() {
+            return { 'todo__description--completed': this.isCompleted }
+        }
+    },
+    inject: ['removeTodo']
 };
 </script>
 
@@ -47,6 +67,9 @@ export default {
     font-weight: 700;
     margin-bottom: 10px;
 }
+.todo__description {
+    font-size: 18px;
+}
 .todo__actions {
     display: flex;
     justify-content: space-between;
@@ -54,5 +77,8 @@ export default {
 }
 .todo__input {
     margin-left: 10px;
+}
+.todo__description--completed {
+    text-decoration: line-through;
 }
 </style>
