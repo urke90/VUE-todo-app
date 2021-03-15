@@ -15,6 +15,7 @@
                     v-model="isCompleted"
                 />
             </label>
+
             <base-button @click="removeTodo(id)" className="btn btn--secondary">
                 Remove
             </base-button>
@@ -37,6 +38,7 @@ export default {
             type: String,
             required: true
         }
+
     },
     data() {
         return {

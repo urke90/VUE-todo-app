@@ -18,10 +18,6 @@ export default {
     components: {
         TodoItem
     },
-    data() {
-        console.log('this', this);
-        return {};
-    },
     inject: ['storedTodos']
 };
 </script>
