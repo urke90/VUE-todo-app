@@ -10,8 +10,6 @@ import TodosNav from '../navigation/TodosNav';
 import StoredTodos from './StoredTodos.vue';
 import AddTodo from './AddTodo.vue';
 
-import { v4 as uuidv4 } from 'uuid';
-
 export default {
     components: {
         TodosNav,
@@ -21,31 +19,23 @@ export default {
     data() {
         return {
             selectedTab: 'stored-todos',
-            storedTodos: [
-                {
-                    id: uuidv4(),
-                    title: 'Dog',
-                    description: 'walk the dog',
-                    completed: false
-                },
-                {
-                    id: uuidv4(),
-                    title: 'School',
-                    description: 'go to school',
-                    completed: false
-                }
-            ]
+            storedTodos: []
         };
     },
     methods: {
         switchTabHandler(tab) {
             this.selectedTab = tab;
+        },
+        addTodo(todo) {
+            this.storedTodos.unshift(todo);
+            this.selectedTab = 'stored-todos';
         }
     },
     provide() {
         return {
             switchTab: this.switchTabHandler,
-            storedTodos: this.storedTodos
+            storedTodos: this.storedTodos,
+            addTodo: this.addTodo
         };
     }
 };

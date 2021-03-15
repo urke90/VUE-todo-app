@@ -10,7 +10,7 @@
                 Completed
                 <input type="checkbox" name="completed" class="todo__input" />
             </label>
-            <base-button class="btn btn--secondary">Remove</base-button>
+            <base-button className="btn btn--secondary">Remove</base-button>
         </div>
     </li>
 </template>
@@ -29,14 +29,7 @@ export default {
         id: {
             type: String,
             required: true
-        },
-        completed: {
-            type: Boolean,
-            required: true
         }
-    },
-    data() {
-        return {};
     }
 };
 </script>
