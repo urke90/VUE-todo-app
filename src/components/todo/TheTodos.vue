@@ -25,14 +25,12 @@ export default {
                 {
                     id: uuidv4(),
                     title: 'Dog',
-                    description: 'walk the dog',
-                    completed: false
+                    description: 'walk the dog'
                 },
                 {
                     id: uuidv4(),
                     title: 'School',
-                    description: 'go to school',
-                    completed: false
+                    description: 'go to school'
                 }
             ]
         };
@@ -40,12 +38,19 @@ export default {
     methods: {
         switchTabHandler(tab) {
             this.selectedTab = tab;
+        },
+        removeTodo(id) {
+            const todoIndex = this.storedTodos.findIndex(
+                todo => todo.id === id
+            );
+            this.storedTodos.splice(todoIndex, 1);
         }
     },
     provide() {
         return {
             switchTab: this.switchTabHandler,
-            storedTodos: this.storedTodos
+            storedTodos: this.storedTodos,
+            removeTodo: this.removeTodo
         };
     }
 };
