@@ -1,19 +1,8 @@
 <template>
-    <button :class="className">
+    <button>
         <slot></slot>
     </button>
 </template>
-
-<script>
-export default {
-    props: {
-        className: {
-            type: String,
-            required: true
-        }
-    }
-};
-</script>
 
 <style scoped>
 .btn {
