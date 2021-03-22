@@ -5,16 +5,13 @@
             <li>
                 <base-button
                     @click="switchTab('stored-todos')"
-                    className="nav__link"
+                    class="nav__link"
                 >
                     Todos List
                 </base-button>
             </li>
             <li>
-                <base-button
-                    @click="switchTab('add-todo')"
-                    className="nav__link"
-                >
+                <base-button @click="switchTab('add-todo')" class="nav__link">
                     Add Todo
                 </base-button>
             </li>
